@@ -23,7 +23,7 @@ class Invoice extends Component {
 		return (
 			<div className={classes.root}>
 				<Grid container spacing={16}>
-					{items.map(this.renderItem, this)}
+					{items.toJS().map(this.renderItem, this)}
 				</Grid>
 			</div>
 		)

@@ -31,8 +31,7 @@ class InvoiceContainer extends Component {
 
 const mapStateToProps = (state) => {
 	const { invoiceView } = state
-	const items = invoiceView.items.toJS()
-	const totals = invoiceView.totals.toJS()
+	const { items, totals } = invoiceView
 	return {
 		items,
 		totals

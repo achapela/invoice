@@ -26,6 +26,7 @@ const styles = theme => ({
 class Totals extends Component {
 	render() {
 		const { classes, totals } = this.props
+		const totalsJS = totals.toJS()
 		return (
 			<React.Fragment>
 				<Grid container spacing={8}>
@@ -34,7 +35,7 @@ class Totals extends Component {
 					<Grid item lg={4} className={classes.total}>
 						<FormControl className={classnames(classes.margin, classes.textField)}>
 							<InputLabel htmlFor="adornment-subtotal">Subtotal</InputLabel>
-							<Input id="adornment-subtotal" value={totals.subtotal || 0.0} startAdornment={<InputAdornment position="start">$</InputAdornment>} disabled />
+							<Input id="adornment-subtotal" value={totalsJS.subtotal || 0.0} startAdornment={<InputAdornment position="start">$</InputAdornment>} disabled />
 						</FormControl>
 					</Grid>
 				</Grid>
@@ -44,7 +45,7 @@ class Totals extends Component {
 					<Grid item lg={4} className={classes.total}>
 						<FormControl className={classnames(classes.margin, classes.textField)}>
 							<InputLabel htmlFor="adornment-tax">Tax (5%)</InputLabel>
-							<Input id="adornment-tax" value={totals.tax || 0.0} startAdornment={<InputAdornment position="start">$</InputAdornment>} disabled />
+							<Input id="adornment-tax" value={totalsJS.tax || 0.0} startAdornment={<InputAdornment position="start">$</InputAdornment>} disabled />
 						</FormControl>
 					</Grid>
 				</Grid>
@@ -54,7 +55,7 @@ class Totals extends Component {
 					<Grid item lg={4} className={classes.total}>
 						<FormControl className={classnames(classes.margin, classes.textField)}>
 							<InputLabel htmlFor="adornment-total">Total</InputLabel>
-							<Input id="adornment-total" value={totals.total || 0.0} startAdornment={<InputAdornment position="start">$</InputAdornment>} disabled />
+							<Input id="adornment-total" value={totalsJS.total || 0.0} startAdornment={<InputAdornment position="start">$</InputAdornment>} disabled />
 						</FormControl>
 					</Grid>
 				</Grid>
